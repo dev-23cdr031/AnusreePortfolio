@@ -11,7 +11,7 @@ interface ProfilePhotoProps {
 
 export function ProfilePhoto({ 
   src = '/images/profile-divya-dharshini.jpg',
-  alt = 'Divya Dharshini profile photo',
+  alt = 'Anusree D profile photo',
   delay = 0.2
 }: ProfilePhotoProps) {
   return (

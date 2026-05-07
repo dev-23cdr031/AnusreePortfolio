@@ -23,8 +23,8 @@ const projectsData: Project[] = [
     description: 'Developed a responsive web application for hackathons discovery and participation. Enabled users to find hackathons, form teams, and collaborate in real time. Implemented secure user authentication and authorization with real-time search and filtering features to help users discover relevant hackathons.',
     image: '/images/hackconnect-project.png',
     tags: ['React', 'Node.js', 'MongoDB', 'WebSocket'],
-    link: 'https://github.com/Divya0804Dharshini/hackconnect',
-    github: 'https://github.com/Divya0804Dharshini/hackconnect',
+    link: 'https://github.com/Anusree26/hackconnect',
+    github: 'https://github.com/Anusree26/hackconnect',
     featured: true,
   },
   {
@@ -33,8 +33,8 @@ const projectsData: Project[] = [
     description: 'AI-powered role-based dashboard for real-time monitoring and optimization of photovoltaic (PV) system efficiency. Implemented digital twin simulation to model and analyze solar data with optimized battery usage and energy storage management.',
     image: '/images/hybrid-renewable-project.png',
     tags: ['AI/ML', 'Python', 'React', 'IoT Data'],
-    link: 'https://github.com/Divya0804Dharshini/renewable-energy-system-new',
-    github: 'https://github.com/Divya0804Dharshini/renewable-energy-system-new',
+    link: 'https://github.com/Anusree26/renewable-energy-system-new',
+    github: 'https://github.com/Anusree26/renewable-energy-system-new',
     featured: true,
   },
   {
@@ -43,8 +43,8 @@ const projectsData: Project[] = [
     description: 'Integrated AI blockchain-based protocol for identity, non-fencing, and mesh networking for secure and reliable monitoring. Implemented real-time emergency support with panic button feature and voice distress recognition to automatically trigger emergency alerts.',
     image: '/images/smart-tourist-safety-project.png',
     tags: ['React Native', 'Blockchain', 'AI', 'Node.js'],
-    link: 'https://github.com/Divya0804Dharshini/smart-tourist-police-dashboard',
-    github: 'https://github.com/Divya0804Dharshini/smart-tourist-police-dashboard',
+    link: 'https://github.com/Anusree26/smart-tourist-police-dashboard',
+    github: 'https://github.com/Anusree26/smart-tourist-police-dashboard',
     featured: true,
   },
 ]

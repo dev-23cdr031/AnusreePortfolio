@@ -36,13 +36,6 @@ const papers: Paper[] = [
     year: '2026',
     link: 'https://www.ijprems.com/research-paper/hackconnect',
   },
-  {
-    id: 4,
-    title: 'AI-BASED PROJECT ORIGINALITY CHECKER FOR RESUMES',
-    venue: 'IJSCI (VOL 03/ISS 01)',
-    year: '2026',
-    link: 'https://ijsci.com/paper-details.php/16695',
-  },
 ]
 
 const publicationTitleParts = [

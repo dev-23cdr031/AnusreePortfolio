@@ -32,7 +32,7 @@ const achievementsData: Achievement[] = [
     description: 'Reached the pre-final stage in the KPIT Sparkle competition.',
     date: '2025',
     impact: 'Pre-finalist',
-    image: '/images/kpit-sparkle-achievement.jpg',
+    image: '/images/kpit-sparkle-dashboard-award.jpg',
     category: 'award',
   },
   {
@@ -117,15 +117,6 @@ const achievementsData: Achievement[] = [
     category: 'certificate',
   },
   {
-    id: 14,
-    title: 'State-Level Buildathon Qualification',
-    description: 'Certificate of achievement for qualifying to the State-Level Buildathon.',
-    date: '2025',
-    impact: 'Certificate',
-    image: '/images/certificate-state-level-buildathon.jpg',
-    category: 'certificate',
-  },
-  {
     id: 15,
     title: 'KPIT Sparkle - Hybrid Renewable Energy',
     description: 'Top 100 certificate for the KPIT Sparkle 2026 Pre-Finale round.',
@@ -150,15 +141,6 @@ const achievementsData: Achievement[] = [
     date: '2026',
     impact: 'Certificate',
     image: '/images/certificate-ijprems-hackconnect.jpg',
-    category: 'certificate',
-  },
-  {
-    id: 18,
-    title: 'IJSCI - Project Originality Checker',
-    description: 'Publication certificate for the AI-Based Project Originality Checker for Resumes paper.',
-    date: '2026',
-    impact: 'Certificate',
-    image: '/images/certificate-ijsci-originality-checker.jpg',
     category: 'certificate',
   },
   {
@@ -228,35 +210,35 @@ const statVariants = {
 }
 
 const graphSkillData = [
-  { label: 'Frontend', value: 91, icon: Code2, color: 'from-cyan-300 to-blue-500' },
-  { label: 'Backend', value: 85, icon: Database, color: 'from-blue-300 to-indigo-500' },
-  { label: 'AI/ML', value: 87, icon: Brain, color: 'from-violet-300 to-cyan-400' },
-  { label: 'Cloud', value: 82, icon: Cloud, color: 'from-sky-300 to-emerald-400' },
-  { label: 'Hackathons', value: 90, icon: Zap, color: 'from-amber-300 to-orange-500' },
+  { label: 'Frontend Projects', value: 91, icon: Code2, color: 'from-cyan-300 to-blue-500' },
+  { label: 'Backend Systems', value: 86, icon: Database, color: 'from-blue-300 to-indigo-500' },
+  { label: 'AI/ML Solutions', value: 88, icon: Brain, color: 'from-violet-300 to-cyan-400' },
+  { label: 'Cloud & DevOps', value: 82, icon: Cloud, color: 'from-sky-300 to-emerald-400' },
+  { label: 'Hackathon Impact', value: 93, icon: Zap, color: 'from-amber-300 to-orange-500' },
 ]
 
 const graphMilestones = [
-  { year: '2024', label: 'PoC 2nd Prize', value: 28 },
-  { year: '2025', label: 'SIH, KPIT, GenAI, Projects', value: 68 },
-  { year: '2026', label: 'KPIT, AI Impact, Codefest, Publications', value: 94 },
+  { year: '2024', label: 'PoC department-level 2nd prize', value: 28 },
+  { year: '2025', label: 'SIH finalist, KPIT, and GenAI Buildathon', value: 72 },
+  { year: '2026', label: 'Top 100 KPIT certificates, Codefest, publications', value: 94 },
 ]
 
 const graphTrendData = [
   { label: '2024', value: 28, note: 'PoC 2nd Prize' },
-  { label: 'Jan 25', value: 42, note: 'HackConnect' },
-  { label: 'Nov 25', value: 58, note: 'GenAI Buildathon' },
-  { label: 'Dec 25', value: 74, note: 'SIH Finalist' },
-  { label: 'Jan 26', value: 82, note: '4 Publications' },
-  { label: 'Feb 26', value: 88, note: 'AI Impact' },
-  { label: 'Apr 26', value: 91, note: 'Codefest + Hackovium' },
-  { label: '2026', value: 94, note: '13 Certificates' },
+  { label: 'Jan 25', value: 43, note: 'HackConnect project' },
+  { label: 'Nov 25', value: 61, note: 'GenAI Buildathon' },
+  { label: 'Dec 25', value: 75, note: 'SIH Grand Finale' },
+  { label: 'Jan 26', value: 84, note: '3 Publications' },
+  { label: 'Feb 26', value: 89, note: 'AI Impact Buildathon' },
+  { label: 'Apr 26', value: 92, note: 'Codefest + Hackovium' },
+  { label: '2026', value: 94, note: '11 Certificates' },
 ]
 
 const graphHighlights = [
   { value: 4, label: 'Award Milestones', detail: 'SIH, KPIT, GenAI, and PoC achievements', icon: Trophy },
-  { value: 13, label: 'Certificates', detail: 'Auto-sliding showcase of participation and publication certificates', icon: ShieldCheck },
+  { value: 11, label: 'Certificates', detail: 'Hackathon, competition, participation, and publication certificates', icon: ShieldCheck },
   { value: 3, label: 'Featured Projects', detail: 'HackConnect, Hybrid Renewable, and Smart Tourist Safety', icon: Rocket },
-  { value: 4, label: 'Publications', detail: 'ShaadisSpot, Smart Tourist Safety, HackConnect, and originality checker', icon: Target },
+  { value: 3, label: 'Publications', detail: 'ShaadisSpot, Smart Tourist Safety, and HackConnect papers', icon: Target },
 ]
 
 function GraphDashboard() {
@@ -296,14 +278,14 @@ function GraphDashboard() {
                 Portfolio Growth Curve
               </h3>
               <p className="mt-3 text-sm leading-7 text-slate-300/85">
-                A clean up-and-down graph of your progress across college events, hackathons,
-                national challenges, publications, certificates, and featured projects.
+                A portfolio-aligned view of your progress across hackathons, national challenges,
+                certificates, publications, and featured engineering projects.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-2 text-center sm:min-w-[360px]">
               {[
                 { value: '2024', label: 'Started' },
-                { value: '24', label: 'Signals' },
+                { value: '21', label: 'Signals' },
                 { value: '2026', label: 'Current' },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border border-cyan-200/10 bg-slate-950/45 px-3 py-3">

@@ -7,16 +7,16 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Divya Dharshini | Full-Stack Developer & AI Specialist',
+  title: 'Anusree D | Full-Stack Developer & AI Specialist',
   description: 'Full-stack developer specializing in AI, machine learning, web development, and mobile applications. Explore my projects, experience, and achievements.',
   keywords: 'developer, full-stack, AI, machine learning, web development, portfolio',
-  authors: [{ name: 'Divya Dharshini' }],
-  creator: 'Divya Dharshini',
+  authors: [{ name: 'Anusree D' }],
+  creator: 'Anusree D',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://dharrshan.dev',
-    title: 'Divya Dharshini | Full-Stack Developer & AI Specialist',
+    title: 'Anusree D | Full-Stack Developer & AI Specialist',
     description: 'Explore my portfolio of cutting-edge projects and professional experience.',
   },
   icons: {
