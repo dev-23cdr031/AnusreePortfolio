@@ -1,11 +1,11 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect, useRef, useCallback } from 'react'
 import { Bot, MessageCircle, Send, Volume2, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface ChatMessage {
-  id: number
+  id: string
   role: 'user' | 'bot'
   text: string
 }
@@ -18,15 +18,26 @@ export function EchoChatbot() {
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
-      id: 1,
+      id: 'initial-bot-message',
       role: 'bot',
       text: devProfileResponse,
     },
   ])
+  const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const canSend = useMemo(() => input.trim().length > 0, [input])
 
-  const speak = (text: string) => {
+  const scrollToBottom = useCallback(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      scrollToBottom()
+    }
+  }, [messages, isOpen, scrollToBottom])
+
+  const speak = useCallback((text: string) => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
       return
     }
@@ -36,9 +47,9 @@ export function EchoChatbot() {
     utterance.rate = 0.95
     utterance.pitch = 1
     window.speechSynthesis.speak(utterance)
-  }
+  }, [])
 
-  const sendMessage = () => {
+  const sendMessage = useCallback(() => {
     const text = input.trim()
 
     if (!text) {
@@ -47,12 +58,12 @@ export function EchoChatbot() {
 
     setMessages((current) => [
       ...current,
-      { id: Date.now(), role: 'user', text },
-      { id: Date.now() + 1, role: 'bot', text: devProfileResponse },
+      { id: crypto.randomUUID(), role: 'user', text },
+      { id: crypto.randomUUID(), role: 'bot', text: devProfileResponse },
     ])
     setInput('')
     speak(devProfileResponse)
-  }
+  }, [input, speak])
 
   const toggleChatbot = () => {
     setIsOpen((current) => {
@@ -99,7 +110,7 @@ export function EchoChatbot() {
               </button>
             </div>
 
-            <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50/45 p-4 dark:bg-transparent">
+            <div className="flex-1 space-y-4 overflow-y-auto bg-slate-50/45 p-4 dark:bg-transparent scrollbar-thin">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -116,12 +127,14 @@ export function EchoChatbot() {
                   </div>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </div>
 
             <div className="border-t border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-slate-950/45">
               <div className="flex items-end gap-2">
                 <textarea
                   value={input}
+                  aria-label="Chat message"
                   onChange={(event) => setInput(event.target.value)}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' && !event.shiftKey) {

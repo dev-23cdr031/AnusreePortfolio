@@ -15,6 +15,12 @@ const seededRandom = (seed: number) => {
 // ============================================================================
 
 function PremiumCinematicBackground() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   return (
     <>
       {/* Animated Floating Gradient Blobs */}
@@ -78,45 +84,37 @@ function PremiumCinematicBackground() {
 
       {/* Animated Particle Field */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        {Array.from({ length: 25 }).map((_, i) => {
-          const duration = seededRandom(i + 1) * 20 + 25
-          const delay = seededRandom(i + 26) * 5
-          const size = seededRandom(i + 51) * 2.5 + 0.5
-          const colors = [
-            'rgba(6, 182, 212, 0.6)',
-            'rgba(14, 165, 233, 0.5)',
-            'rgba(168, 85, 247, 0.4)',
-            'rgba(236, 72, 153, 0.3)',
-          ]
-          const color = colors[Math.floor(seededRandom(i + 76) * colors.length)]
+        {isMounted &&
+          Array.from({ length: 25 }).map((_, i) => {
+            const duration = seededRandom(i + 1) * 20 + 25
+            const delay = seededRandom(i + 26) * 5
+            const size = seededRandom(i + 51) * 2.5 + 0.5
+            const width = `${size.toFixed(2)}px`
+            const left = `${(seededRandom(i + 101) * 100).toFixed(2)}%`
+            const top = `${(seededRandom(i + 126) * 100).toFixed(2)}%`
+            const colors = [
+              'rgba(6, 182, 212, 0.6)',
+              'rgba(14, 165, 233, 0.5)',
+              'rgba(168, 85, 247, 0.4)',
+              'rgba(236, 72, 153, 0.3)',
+            ]
+            const color = colors[Math.floor(seededRandom(i + 76) * colors.length)]
 
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full blur-sm"
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-                background: color,
-                left: `${seededRandom(i + 101) * 100}%`,
-                top: `${seededRandom(i + 126) * 100}%`,
-                boxShadow: `0 0 ${size * 2}px ${color}`,
-              }}
-              animate={{
-                y: [0, -200, -400],
-                x: [0, Math.sin(i) * 100, Math.cos(i) * 100],
-                opacity: [0, 0.7, 0],
-              }}
-              transition={{
-                duration,
-                repeat: Infinity,
-                delay,
-                ease: 'linear',
-                type: 'tween',
-              }}
-            />
-          )
-        })}
+            return (
+              <div
+                key={i}
+                className="absolute rounded-full blur-sm"
+                style={{
+                  width,
+                  height: width,
+                  background: color,
+                  left,
+                  top,
+                  boxShadow: `0 0 ${(size * 2).toFixed(2)}px ${color}`,
+                }}
+              />
+            )
+          })}
       </div>
 
       {/* Subtle Animated Grid */}
@@ -338,6 +336,10 @@ function PremiumCard({
     purple: 'border-violet-200/80 dark:border-violet-300/18',
     green: 'border-emerald-200/80 dark:border-emerald-300/18',
     blue: 'border-blue-200/80 dark:border-blue-300/18',
+    cyan: 'border-cyan-400/30',
+    purple: 'border-purple-400/30',
+    green: 'border-green-400/30',
+    blue: 'border-blue-400/30',
   }[accent]
 
   const hoverBorder = {
@@ -373,6 +375,7 @@ function PremiumCard({
           animate={{
             boxShadow: [
               `inset 0 0 10px rgba(6, 182, 212, 0)`,
+              `inset 0 0 18px rgba(125, 211, 252, 0.08)`,
               `inset 0 0 18px rgba(125, 211, 252, 0.08)`,
               `inset 0 0 10px rgba(6, 182, 212, 0)`,
             ],
