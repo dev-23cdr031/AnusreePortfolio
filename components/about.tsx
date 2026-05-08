@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState, MouseEvent as ReactMouseEvent } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { AnimatedSection } from './motion-shell'
-import { ProfilePhoto } from './profile-photo'
 
 const seededRandom = (seed: number) => {
   const value = Math.sin(seed * 9999) * 10000
@@ -595,17 +594,10 @@ export function About() {
         >
           {/* LEFT COLUMN - PROFILE, INTRO, STATS */}
           <motion.div className="md:col-span-2 space-y-5">
-            {/* Profile Card with 3D Tilt */}
-            <TiltProfileCard>
-              <div className="flex flex-col items-center">
-                <ProfilePhoto />
-              </div>
-            </TiltProfileCard>
-
             {/* Intro Card */}
             <PremiumCard delay={0.1} accent="cyan">
               <p className="text-sm leading-relaxed text-muted-foreground">
-                I’m Anusree D, a passionate and dedicated aspiring software developer with a strong enthusiasm for web development, modern technologies, and innovative digital solutions. As a Smart India Hackathon (SIH) Finalist, I have gained valuable experience in problem-solving, teamwork, and building impactful technology-driven solutions in competitive environments. I enjoy transforming ideas into interactive and user-friendly applications while continuously strengthening my technical expertise in React, HTML, CSS, Bootstrap, Python, MySQL, and modern UI/UX design. Along with technical knowledge, I possess strong leadership, communication, and collaboration skills, enabling me to work effectively within teams, manage responsibilities confidently, and contribute positively to project development and execution.
+                I'm Roshini M, a passionate and dedicated aspiring software developer with a strong enthusiasm for web development, modern technologies, and innovative digital solutions. As a recipient of the IIT Bhubaneswar 5th Prize, I have gained valuable experience in problem-solving, teamwork, and building impactful technology-driven solutions in competitive environments. I enjoy transforming ideas into interactive and user-friendly applications while continuously strengthening my technical expertise in React, HTML, CSS, Bootstrap, Python, MySQL, and modern UI/UX design. Along with technical knowledge, I possess strong leadership, communication, and collaboration skills, enabling me to work effectively within teams, manage responsibilities confidently, and contribute positively to project development and execution.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 I am deeply interested in building technology that creates real-world impact and enhances user experiences. Over time, I have worked on multiple projects ranging from responsive web platforms to innovative solutions such as Hybrid Renewable Energy Orchestration systems and sales data analysis platforms. I believe that combining creativity, consistency, leadership, and technical knowledge is the key to building meaningful digital products. I continuously explore emerging technologies, improve my problem-solving abilities, and challenge myself through innovation, teamwork, and continuous learning. My goal is to grow into a skilled full-stack developer and technology professional who contributes to future-focused projects while creating impactful and inspiring digital experiences.
@@ -731,7 +723,7 @@ export function About() {
               <PremiumCard delay={0.25} accent="blue">
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    { label: 'Name', value: 'ANUSREE D' },
+                    { label: 'Name', value: 'BHARANI N' },
                     { label: 'Father Name', value: 'DHARMALINGAM' },
                     { label: 'Mother Name', value: 'VASANTHI D' },
                     { label: 'DOB', value: '26.10.2025' },
