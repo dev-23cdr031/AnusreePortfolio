@@ -729,7 +729,7 @@ export function About() {
                     { label: 'Name', value: 'ANUSREE D' },
                     { label: 'Father Name', value: 'DHARMALINGAM' },
                     { label: 'Mother Name', value: 'VASANTHI D' },
-                    { label: 'DOB', value: '26.10.2025' },
+                    { label: 'DOB', value: '26.10.2005' },
                     { label: 'Birth Place', value: 'TIRUPUR, TAMILNADU' },
                     { label: 'Phone No', value: '9080620644' },
                     { label: 'College Mail ID', value: 'anusreed.23csd@kongu.edu' },
