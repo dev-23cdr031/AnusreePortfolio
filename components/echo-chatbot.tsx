@@ -97,8 +97,8 @@ export function EchoChatbot() {
                   <Bot className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-black text-slate-950 dark:text-white">Anusree Chatbot</h3>
-                  <p className="text-xs text-slate-500 dark:text-cyan-100/75">Responds as Anusree Chatbot</p>
+                  <h3 className="text-sm font-black text-slate-950 dark:text-white">ANU Chatbot</h3>
+                  <p className="text-xs text-slate-500 dark:text-cyan-100/75">Responds as ANU Chatbot</p>
                 </div>
               </div>
               <button
