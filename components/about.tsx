@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState, MouseEvent as ReactMouseEvent } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { AnimatedSection } from './motion-shell'
+import { ProfilePhoto } from './profile-photo'
 
 const seededRandom = (seed: number) => {
   const value = Math.sin(seed * 9999) * 10000
@@ -594,6 +595,8 @@ export function About() {
         >
           {/* LEFT COLUMN - PROFILE, INTRO, STATS */}
           <motion.div className="md:col-span-2 space-y-5">
+            {/* Profile Photo */}
+            <ProfilePhoto delay={0.12} />
             {/* Intro Card */}
             <PremiumCard delay={0.1} accent="cyan">
               <p className="text-sm leading-relaxed text-muted-foreground">
